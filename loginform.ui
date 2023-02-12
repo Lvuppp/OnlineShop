@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>649</width>
-    <height>382</height>
+    <width>381</width>
+    <height>409</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">backgroung: rgb(25, 10, 17)</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -56,6 +59,20 @@ font: 700 22pt &quot;Arial&quot;;</string>
         </widget>
        </item>
        <item>
+        <widget class="QLabel" name="loginLabel">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Username or email</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QLineEdit" name="passwordLineEdit">
          <property name="enabled">
           <bool>true</bool>
@@ -81,7 +98,7 @@ font: 700 22pt &quot;Arial&quot;;</string>
         <widget class="QLabel" name="passwordLable">
          <property name="font">
           <font>
-           <family>Microsoft YaHei UI</family>
+           <family>Segoe UI</family>
           </font>
          </property>
          <property name="text">
@@ -106,20 +123,6 @@ font: 700 22pt &quot;Arial&quot;;</string>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="loginLabel">
-         <property name="font">
-          <font>
-           <family>Microsoft YaHei UI</family>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Username or email</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QPushButton" name="signInButton">
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
@@ -130,12 +133,41 @@ font: 700 22pt &quot;Arial&quot;;</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="signUpButton">
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <pointsize>7</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+           <underline>false</underline>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
          </property>
          <property name="text">
-          <string>Sign up</string>
+          <string>No account?</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="signUpLabel">
+         <property name="font">
+          <font>
+           <underline>true</underline>
+          </font>
+         </property>
+         <property name="lineWidth">
+          <number>-5</number>
+         </property>
+         <property name="text">
+          <string>Sign up!</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>

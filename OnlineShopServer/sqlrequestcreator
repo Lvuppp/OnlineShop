@@ -1,0 +1,13 @@
+#ifndef SQLLOGINREQUESTFACTORY
+#define SQLLOGINREQUESTFACTORY
+
+#include "sqlrequestfactory.h"
+
+class SqlLoginRequestFactory : SqlRequestFactory
+{
+public:
+    SqlLoginRequestFactory();
+    Request *getRequestFromFactory(const QString&) override;
+};
+
+#endif // SQLLOGINREQUESTFACTORY
