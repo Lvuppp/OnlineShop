@@ -15,6 +15,7 @@ SOURCES += \
     mainwindow.cpp \
     request.cpp \
     serverModel.cpp \
+    serverthread.cpp \
     sqlrequestcreator.cpp \
     sqlrequestfactory.cpp
 
@@ -23,11 +24,14 @@ HEADERS += \
     mainwindow.h \
     request.h \
     serverModel.h \
+    serverthread.h \
     sqlrequestcreator \
     sqlrequestfactory.h
 
 FORMS += \
     mainwindow.ui
+
+include ($$PWD/Qt-Secret/src/Qt-Secret.pri)
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -9,6 +9,7 @@
 
 #include "databaserequesthandler.h"
 #include "sqlrequestfactory.h"
+#include "serverthread.h"
 
 class ServerModel : public QTcpServer
 {
@@ -17,6 +18,8 @@ class ServerModel : public QTcpServer
 public:
     ServerModel(const ServerModel&) = delete;
     ServerModel operator=(const ServerModel&) = delete;
+
+    ~ServerModel();
 
     static ServerModel *getInstance();
 
@@ -30,9 +33,11 @@ signals:
 private:
     ServerModel();
 
-    void readDataStream(QDataStream stream);
+    void readDataStream(QByteArray _stream);
+    void sendDataToClient(QTcpSocket *_clientRequest, QDataStream _out);
+    void sendDataToClient(QTcpSocket *_clientRequest, QString _out);
 
-    DatabaseRequestHandler requestHandler;
+    DatabaseRequestHandler _requestHandler;
     QVector<QTcpSocket *> _sockets;
     const int _port = 9234;
     QByteArray _data;

@@ -3,7 +3,7 @@
 
 #include "sqlrequestfactory.h"
 
-class SqlLoginRequestFactory : SqlRequestFactory
+class SqlLoginRequestFactory : public SqlRequestFactory
 {
 public:
     SqlLoginRequestFactory();

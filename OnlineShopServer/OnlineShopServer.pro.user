@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 9.0.1, 2023-02-12T00:53:34. -->
+<!-- Written by QtCreator 9.0.1, 2023-02-14T01:03:54. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -238,7 +238,9 @@
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
-    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes">
+     <value type="QString">Path=C:\Qt\6.2.4\mingw_64\bin;C:\Qt\Tools\mingw1120_64\bin;C:\Qt\6.2.4\mingw_64\bin;C:\Qt\Tools\mingw1120_64\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\PostgreSQL\15\bin;C:\Program Files\PostgreSQL\15\lib;C:\Program Files\PostgreSQL\15\include;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files\NASM;C:\Program Files\Git\usr\bin;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\bin\Hostx64\x64;C:\Users\egorb\AppData\Local\Microsoft\WindowsApps;C:\Users\egorb\.dotnet\tools;C:\Users\egorb\AppData\Local\GitHubDesktop\bin;C:\Qt\Tools\OpenSSL\Win_x64\bin;</value>
+    </valuelist>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/GItProjects/OnlineShop/OnlineShopServer/OnlineShopServer.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/GItProjects/OnlineShop/OnlineShopServer/OnlineShopServer.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>

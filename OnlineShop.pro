@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     clientmodel.cpp \
     clientviewmodel.cpp \
+    dataencryptor.cpp \
     loginform.cpp \
     main.cpp \
     mainwindow.cpp
@@ -18,12 +19,15 @@ SOURCES += \
 HEADERS += \
     clientmodel.h \
     clientviewmodel.h \
+    dataencryptor.h \
     loginform.h \
     mainwindow.h
 
 FORMS += \
     loginform.ui \
     mainwindow.ui
+
+include ($$PWD/OnlineShopModel/Qt-Secret/src/Qt-Secret.pri)
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

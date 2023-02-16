@@ -1,6 +1,8 @@
 #ifndef LOGINFORM_H
 #define LOGINFORM_H
 
+#include "clientviewmodel.h"
+
 #include <QWidget>
 
 namespace Ui {
@@ -15,8 +17,12 @@ public:
     explicit LoginForm(QWidget *parent = nullptr);
     ~LoginForm();
 
+private slots:
+    void on_signInButton_clicked();
+
 private:
     Ui::LoginForm *ui;
+    ClientViewModel cl;
 };
 
 #endif // LOGINFORM_H

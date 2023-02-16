@@ -9,9 +9,23 @@ ServerModel::ServerModel()
     }
 }
 
-ServerModel::~ServerModel()
+void ServerModel::sendDataToClient(QTcpSocket *_clientRequest, QDataStream _out)
 {
 
+}
+
+void ServerModel::sendDataToClient(QTcpSocket *_clientRequest, QString _out)
+{
+    ServerThread* thread = new ServerThread(_clientRequest, _out, this);
+    connect(thread, &ServerThread::finished, thread, &ServerThread::deleteLater);
+    thread->start();
+}
+
+ServerModel::~ServerModel()
+{
+    for(auto socket : _sockets){
+        delete socket;
+    }
 }
 
 ServerModel *ServerModel::getInstance()
@@ -23,25 +37,30 @@ ServerModel *ServerModel::getInstance()
     return _singltoneServer;
 }
 
-void ServerModel::readDataStream(QDataStream stream)
-{
-    /*
-        Данные приходят в виде запроса:
-        TYPE_OF_REQUEST'\0'
-    */
+//void ServerModel::readDataStream(QByteArray incomingRequest)
+//{
 
-    while(true){
-
-    }
-
-    qDebug("Broke data");
-}
+//}
 
 void ServerModel::readyToRead()
 {
     QTcpSocket* incomingSocket = qobject_cast<QTcpSocket *>(sender());
 
-//    _databaseModel = QSqlRelationalTableModel( )
+    /*
+        Данные приходят в виде запроса:
+        TYPE_OF_REQUEST'\0'REQUEST_PARAMS
+    */
+
+    QDataStream stream;
+    stream.setVersion(QDataStream::Qt_6_2);
+    qint64 sizeOfRequest = 0;
+
+    while(sizeOfRequest != incomingSocket->readBufferSize()){
+
+    }
+
+
+    qDebug("Broke data");
 }
 
 void ServerModel::incomingConnection(qintptr socketDescriptor)
@@ -49,13 +68,14 @@ void ServerModel::incomingConnection(qintptr socketDescriptor)
     QTcpSocket* incomingSocket = new QTcpSocket;
     incomingSocket->setSocketDescriptor(socketDescriptor);
 
-    connect(incomingSocket, &QTcpSocket::readyRead, this, &ServerModel::readyToRead);
-    connect(incomingSocket, &QTcpSocket::disconnected, this, &ServerModel::deleteLater);
+    connect(incomingSocket, &QTcpSocket::readyRead,
+            this, &ServerModel::readyToRead);
+    connect(incomingSocket, &QTcpSocket::disconnected,
+            this, &ServerModel::deleteLater);
 
-    qDebug() << "incoming connection";
     _sockets.push_back(incomingSocket);
+    qDebug() << "incoming connection";
 
     emit incomingConnectionNotification(socketDescriptor);
 }
-
 

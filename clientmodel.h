@@ -6,6 +6,9 @@ class ClientModel
 {
 public:
     ClientModel();
+
+private:
+
 };
 
 #endif // CLIENTMODEL_H
